@@ -1,0 +1,24 @@
+<template>
+  <div class="atticle-comment" v-html="articleList.article_content">
+    sda
+  </div>
+</template>
+
+<script>
+import {getArticleById} from '@/assets/fake-api'
+export default {
+    data() {
+      return {
+        articleList:[]
+      }
+    },
+    async mounted(){
+      const articleList = await getArticleById('6981673766178783262')
+      this.$set(this,'articleList',articleList.data.article)
+    }
+}
+</script>
+
+<style>
+
+</style>
