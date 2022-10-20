@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <van-button type="primary">主要按钮</van-button>
     <h1>This is an about page</h1>
       <span @click="gonum">传参</span>------------------
       <span @click="getArticleInfo">发起请求</span>

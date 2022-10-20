@@ -1,0 +1,10 @@
+body {
+  background-color: #f5f7f9;
+}
+.pagr-nav-bar {
+  background-color: #3296fa;
+}
+.pagr-nav-bar .van-nav-bar__title,
+.pagr-nav-bar .van-icon {
+  color: #fff;
+}
