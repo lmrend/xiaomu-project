@@ -1,6 +1,6 @@
 <template>
   <div class="atticle-comment" v-html="articleList.article_content">
-    <van-button type="primary">主要按钮</van-button>
+    
   </div>
 </template>
 

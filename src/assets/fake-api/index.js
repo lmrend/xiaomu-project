@@ -1,7 +1,7 @@
 import { categories } from './data/categories';
 import { articles } from './data/articles';
 import { comments } from './data/comments';
-
+import { allCategories } from './data/allCategories'
 /**
  * 获取所有分类
  */
@@ -10,6 +10,14 @@ export async function getCategories() {
     code: 0,
     data: {
       categories,
+    },
+  };
+}
+export async function getAllCategories() {
+  return {
+    code: 0,
+    data: {
+      allCategories,
     },
   };
 }

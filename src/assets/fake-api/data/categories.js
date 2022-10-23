@@ -37,4 +37,21 @@ export const categories = [
       { category_id: 43, category_name: 'Flutter' },
     ],
   },
+  {
+    category_id: 5,
+    category_name: '人工智能',
+  },
+  {
+    category_id: 6,
+    category_name: '开发工具',
+  },
+  {
+    category_id: 7,
+    category_name: '代码人生',
+
+  },
+  {
+    category_id: 8,
+    category_name: '阅读',
+  },
 ];

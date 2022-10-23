@@ -8,7 +8,7 @@ const routes = [
     path: '/',
     /* name: 'layout', */
     component: () => import('@/views/layout'),
-    /* redirect: '/home', */
+    redirect: '/home',
     children: [
       {
         path: '/home',
