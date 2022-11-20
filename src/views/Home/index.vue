@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <van-nav-bar class="pagr-nav-bar" fixed>
-      <van-button slot="title" type="info" text="搜索" icon="search" class="search-btn" round size="mini"></van-button>
+      <van-button slot="title" type="info" text="搜索" icon="search" class="search-btn" round size="mini" @click="$router.push('/search')"></van-button>
     </van-nav-bar>
     <van-tabs v-model="active" animated swipeable class="change-tabs">
       <van-tab :title="category.category_name" v-for="category in categories" :key="category.category_id" >

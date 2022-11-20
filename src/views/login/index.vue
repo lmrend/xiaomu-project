@@ -11,7 +11,7 @@
         <van-icon name="manager-o" slot="left-icon" />
       </van-field>
       <van-field v-model="user.code" name="code" label="验证码" placeholder="请输入验证码" 
-      type="number" maxlength="4"
+      type="number" maxlength="6"
       :rules="userFormRules.code">
         <van-icon name="manager-o" slot="left-icon" />
         <template #button>
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+/* import {sendSms,Login} from '@/api' */
 export default {
   name: "LoginPage",
   data() {
@@ -53,7 +54,7 @@ export default {
                message: '请填写用户名' 
             }, */
             {
-                parttern: /^\d{4}$/,
+                parttern: /^\d{6}$/,
                 message: '验证码错误'
             }
         ]
@@ -62,28 +63,34 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      const user = this.user
+    async onSubmit() {
       this.$toast.loading({
         message: "加载中...",
         forbidClick: true
       })
-      if (user.phone == 18593490927 && user.code == 8888) {
+      try {
+        /* let {data} = await Login({obile:this.user.phone,code:this.user.code}) */
+        if(this.phone == '18593490927' && this.code==123456)
         this.$toast.success('登陆成功')
-        this.$store.commit('setUser',{token:'adaa45454'})
+        /* this.$store.commit('setUser',data.data) */
+        this.$store.commit('setUser',{token:'4545ad'})
         this.$router.back()
-      } else {
-        this.$toast.fail('登陆失败');
+      } catch (error) {
+        this.$toast.fail('error');
       }
     },
     async onSendSms() {
         try {
             await this.$refs.loginForm.validate('phone')
-            console.log("sda")
         } catch (error) {
             return console.log(error)
         }
         this.isCountDownShow = true 
+        /* try {
+          await sendSms(this.user.phone)
+        } catch (error) {
+          this.$toast.fail(error)
+        } */
     }
   }
 }

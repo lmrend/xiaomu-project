@@ -1,8 +1,5 @@
 <template>
   <div class="article-container">
-    <van-nav-bar class="pagr-nav-bar" fixed title="文章详情" left-arrow @click-left="$router.back()">
-      
-    </van-nav-bar>
     <h5>{{articleList.article_info.title}}</h5>
     <div class="atticle-comment" v-html="articleList.article_content">
     
@@ -32,16 +29,10 @@ import CommentPost from '@/components/CommentPost.vue'
 import CommentList from '@/components/CommentList.vue'
 import {getArticleById} from '@/assets/fake-api'
 export default {
-    name: 'ArticlePage',
+    name: 'examplePage',
     components: {
       CommentList,
       CommentPost
-    },
-    props:{
-      article_id:{
-        type:[Number,String],
-        requireds:true
-      }
     },
     data() {
       return {
@@ -53,7 +44,7 @@ export default {
       
     },
     async mounted(){
-      const articleList = await getArticleById(this.article_id)
+      const articleList = await getArticleById('6944863057000529933')
       this.$set(this,'articleList',articleList.data.article)
     },
     methods: {

@@ -1,9 +1,12 @@
+import { setItem,getItem } from "@/utils/storage"
+const TOKEN_KEY = 'USER'
 const state = {
-    user: {}
+    user: getItem(TOKEN_KEY)
 }
 const mutations = {
     setUser(state,data) {
         state.user = data
+        setItem(TOKEN_KEY,state.user)
     }
 }
 const actions = {

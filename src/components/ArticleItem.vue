@@ -1,5 +1,5 @@
 <template>
-  <van-cell class="Article-container">
+  <van-cell class="Article-container" :to="`/article/${article.article_id}`">
     
     <div slot="title" class="title van-multi-ellipsis--l2" >{{article.article_info.title}}</div>
     <div slot="label" class="lable">
@@ -12,6 +12,7 @@
     <div slot="default"></div>
     <van-image referrerPolicy="no-referrer" class="right-cover" 
     :src="article.article_info.cover_image"
+    lazy-load
     fit="contain" v-if="article.article_info.cover_image !== ''">
     </van-image>
   </van-cell>

@@ -7,5 +7,5 @@ dayjs.extend(relativeTime)
 dayjs.locale('zh-cn')
 Vue.filter('relativeTime', value => {
     /* value = value - 15 */
-    return (dayjs().to(dayjs(value)))
+    return (dayjs().to(dayjs(value))) 
 })

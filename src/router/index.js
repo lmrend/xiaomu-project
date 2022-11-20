@@ -21,16 +21,17 @@ const routes = [
         component: () => import('../views/AboutView.vue')
       },
       {
-        path: '/article',
-        name: 'article',
-        component: () => import('../components/ArticlePage.vue')
+        path: '/wenda',
+        name: 'wenda',
+        props:true,
+        component: () => import('../views/wenda')
       },
 
       {
         path: '/my',
         name: 'my',
         component: () => import('@/views/My'),
-      }
+      },
     ]
   },
 
@@ -38,7 +39,24 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('@/views/login')
-  }
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/components/searchPage.vue')
+  },
+  {
+    path: '/article/:article_id',
+    name: 'article',
+    props:true,
+    component: () => import('../components/ArticlePage.vue')
+  },
+  {
+    path: '/my/profile',
+    name: 'user-profile',
+    props:true,
+    component: () => import('../components/userProfile.vue')
+  },
 ]
 
 const router = new VueRouter({
